@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { DropDownMenu, MenuItem, TextField, RaisedButton } from 'material-ui'
+import { SelectField, MenuItem, TextField, RaisedButton } from 'material-ui'
 
 import IconSection from './IconSection'
 import ColoredSection from './ColoredSection'
@@ -29,11 +29,10 @@ class SendTokens extends React.Component {
       <div>
         <IconSection title={this.props.title}>
           <div styleName="form">
-            <DropDownMenu styleName="dropdown" style={{ width: 200 }}>
-              <MenuItem value={1} primaryText="USD" />
-              <MenuItem value={2} primaryText="EUR" />
+            <SelectField style={{ width: 200 }}>
+              <MenuItem value={1} primaryText="TIME" />
               <MenuItem value={3} primaryText="ETH" />
-            </DropDownMenu>
+            </SelectField>
           </div>
         </IconSection>
         <div styleName="balance">
