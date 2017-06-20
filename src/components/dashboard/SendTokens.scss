@@ -6,8 +6,21 @@
 }
 
 .form {
-  .dropdown {
-    margin-left: -24px;
+
+  .gas {
+    position: relative;
+    width: 200px;
+    .axis {
+      margin-top: -40px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      .axis-label {
+        flex: 0 0 auto;
+        font-size: 12px;
+        opacity: 0.6;
+      }
+    }
   }
 }
 
