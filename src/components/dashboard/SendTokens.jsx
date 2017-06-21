@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { MuiThemeProvider, SelectField, MenuItem, TextField, RaisedButton, Slider } from 'material-ui'
+import { MuiThemeProvider, SelectField, MenuItem, TextField, RaisedButton, Slider, Toggle } from 'material-ui'
 
 import IconSection from './IconSection'
 import ColoredSection from './ColoredSection'
@@ -26,7 +26,8 @@ export class SendTokens extends React.Component {
     tokens: PropTypes.object,
     isTokensLoaded: PropTypes.bool,
     currency: PropTypes.string,
-    gasPrice: PropTypes.number
+    gasPrice: PropTypes.number,
+    open: PropTypes.bool
   }
 
   static defaultProps = {
@@ -39,7 +40,8 @@ export class SendTokens extends React.Component {
 
     this.state = {
       currency: props.currency,
-      gasPrice: props.gasPrice
+      gasPrice: props.gasPrice,
+      open: props.open
     }
   }
 
@@ -126,29 +128,44 @@ export class SendTokens extends React.Component {
         </div>
         <div>
           <div styleName="gas">
-            <Slider min={0} max={1} step={0.1}
-              value={this.state.gasPrice}
-              onChange={(event, value) => this.handleGasPriceChanged(value)}
-            />
-            <div styleName="axis">
-              <div styleName="axis-label">Low</div>
-              <div styleName="axis-label">Medium</div>
-              <div styleName="axis-label">High</div>
+            <div styleName="gas-label">
+              Gas price:
+            </div>
+            <div styleName="gas-value">
+              <Slider min={0} max={1} step={0.1}
+                value={this.state.gasPrice}
+                onChange={(event, value) => this.handleGasPriceChanged(value)}
+              />
+              <div styleName="axis">
+                <div styleName="axis-label">Low</div>
+                <div styleName="axis-label">Medium</div>
+                <div styleName="axis-label">High</div>
+              </div>
+            </div>
+            <div styleName="gas-actions">
+              <span styleName="action-label">Advanced: </span>
+              <span styleName="action-control">
+                <Toggle toggled={this.state.open} onToggle={(event, value) => this.handleOpen(value)} />
+              </span>
             </div>
           </div>
         </div>
-        <div>
-          <TextField
-            floatingLabelText="Gas limit"
-            style={{width: '330px'}}
-          />
-        </div>
-        <div>
-          <TextField
-            floatingLabelText="Custom data"
-            style={{width: '150px'}}
-          />
-        </div>
+        { !this.state.open ? null : (
+          <div>
+            <div>
+              <TextField
+                floatingLabelText="Gas limit"
+                style={{width: '330px'}}
+              />
+            </div>
+            <div>
+              <TextField
+                floatingLabelText="Custom data"
+                style={{width: '150px'}}
+              />
+            </div>
+          </div>
+        )}
       </div>
     )
   }
@@ -191,6 +208,13 @@ export class SendTokens extends React.Component {
     this.setState({
       ...this.state,
       gasPrice
+    })
+  }
+
+  handleOpen(open) {
+    this.setState({
+      ...this.state,
+      open
     })
   }
 }

@@ -17,7 +17,7 @@
     :global {
 
       .WalletContent__grid {
-        @include grid(6, 128px, 40px);
+        @include grid(6, 64px, 40px);
       }
     }
 

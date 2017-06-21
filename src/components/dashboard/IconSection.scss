@@ -13,8 +13,9 @@
   }
 
   .left {
-    @include position(absolute);
+    position: relative;
     display: flex;
+    min-height: 100%;
     flex-direction: column;
     justify-content: space-between;
 
@@ -49,6 +50,7 @@
         .content {
           background-repeat: no-repeat;
           background-position: center center;
+          background-size: 90% 90%;
         }
       }
     }
