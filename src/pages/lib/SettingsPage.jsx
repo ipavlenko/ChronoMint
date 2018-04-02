@@ -18,6 +18,7 @@ export default class SettingsPage extends Component {
         >
           <Partials.SettingsContent />
         </CSSTransitionGroup>
+        { !window.isMobile && <Partials.FooterPartial /> }
       </div>
     )
   }

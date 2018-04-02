@@ -12,6 +12,9 @@ export default {
       key: 'dashboard', title: 'nav.dashboard', icon: 'dashboard', path: '/dashboard',
     },
     {
+      key: 'wallet', title: 'nav.wallet', icon: 'account_balance_wallet', path: '/wallet',
+    },
+    {
       key: 'exchange', title: 'nav.exchange', icon: 'compare_arrows', path: '/exchange',
     },
     {
@@ -21,7 +24,7 @@ export default {
       key: 'rewards', title: 'nav.rewards', icon: 'card_giftcard', path: '/rewards',
     },
     {
-      key: 'assets', title: 'nav.assets', icon: 'toll', path: '/assets', showMoreButton: true,
+      key: 'assets', title: 'nav.assets', icon: 'toll', path: '/assets',
     },
   ],
   cbe: [

@@ -5,8 +5,6 @@ export const NOTIFIER_MESSAGE = 'notifier/MESSAGE'
 export const NOTIFIER_READ = 'notifier/READ'
 export const NOTIFIER_CLOSE = 'notifier/CLOSE'
 
-export const DUCK_NOTIFIER = 'notifier'
-
 export const notify = (notice: AbstractNoticeModel, isStorable = true) => ({
   type: NOTIFIER_MESSAGE,
   notice,

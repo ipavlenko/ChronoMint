@@ -181,7 +181,7 @@ new WebpackDevServer(compiler, {
       "target": {
         "host": "localhost",
         "protocol": 'http:',
-        "port": 8083,
+        "port": 8081,
       },
       ignorePath: true,
       changeOrigin: true,

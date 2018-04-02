@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Translate } from 'react-redux-i18n'
+import { initMultisigWalletManager } from 'redux/multisigWallet/actions'
 import { DUCK_WALLET } from 'redux/wallet/actions'
 
 import './WalletContent.scss'
@@ -29,7 +30,9 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {
+    initMultisigWalletManager: () => dispatch(initMultisigWalletManager()),
+  }
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -39,8 +42,12 @@ export default class WalletContent extends Component {
     isTesting: PropTypes.bool,
     selectedNetworkId: PropTypes.number,
     selectedProviderId: PropTypes.number,
+    initMultisigWalletManager: PropTypes.func,
   }
 
+  componentWillMount () {
+    this.props.initMultisigWalletManager()
+  }
 
   renderWalletsInstructions () {
     return (

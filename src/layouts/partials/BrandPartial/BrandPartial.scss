@@ -2,7 +2,6 @@
 @import "~styles/partials/mixins";
 
 .root {
-  padding-top: 120px;
   display: table;
   width: 100%;
   position: relative;
@@ -11,7 +10,7 @@
 }
 
 .row {
-  margin: 0 56px 56px;
+  margin: 30px 56px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -113,6 +112,7 @@
 }
 
 .when-open {
+  height: 200px;
 }
 
 .toggle {
@@ -120,11 +120,12 @@
   transform: translateY(50%);
   border-radius: 50%;
   text-align: center;
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 40px;
   background-image: $bg-gradient-0;
   background-size: 2560px 512px;
   background-position: right bottom;
+  z-index: 300;
 
   // Should be in sync with InfoPartial
   @media only screen and (max-width: 1064px) {

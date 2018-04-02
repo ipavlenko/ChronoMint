@@ -19,7 +19,9 @@ export default class AssetsPage extends Component {
           <Partials.InfoPartial />
           <Partials.AssetsContent />
         </CSSTransitionGroup>
+        { !window.isMobile && <Partials.FooterPartial /> }
       </div>
     )
   }
 }
+

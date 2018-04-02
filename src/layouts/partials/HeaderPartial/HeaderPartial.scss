@@ -1,12 +1,13 @@
 @import "~styles/partials/variables";
 @import "~styles/partials/mixins";
 
-$default-padding: 8px 0;
+$default-padding: 8px 0px;
 
 .root {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .menu {
@@ -104,27 +105,15 @@ $default-padding: 8px 0;
 }
 
 .actions {
+  position: relative;
+  padding: $default-padding;
+  flex: 0 0 auto;
   display: flex;
-}
+  align-items: center;
 
-.action {
-  border-radius: 50%;
-  min-width: 50px;
-  min-height: 50px;
-  background-color: $color-white;
-  border: 1px solid $color-white;
-  margin: 5px;
-
-  &:hover {
-    background-color: $color-hover;
-    border-color: $color-hover;
-    .icon {
-      color: $color-white;
-    }
-  }
-  .icon {
-    color: $sideMenu-background;
-  }
+  // @include md-only {
+  //   display: none;
+  // }
 }
 
 .actionsEntry {
@@ -153,7 +142,7 @@ $default-padding: 8px 0;
   line-height: 14px;
   font-weight: bold;
   border-radius: 7px;
-  padding: 0 2px;
+  padding: 0px 2px;
   min-width: 14px;
   text-align: center;
   color: #FFFFFF;
@@ -201,7 +190,7 @@ $default-padding: 8px 0;
   opacity: 0.6;
   font-size: 16px;
   margin: 0;
-  padding: 6px 0 0 0;
+  padding: 6px 0px 0px 0px;
 }
 
 .sectionBody {
@@ -226,7 +215,7 @@ $default-padding: 8px 0;
   vertical-align: top;
   width: 1%;
   color: $color-primary-1;
-  padding: 5px 16px 5px 0;
+  padding: 5px 16px 5px 0px;
 }
 
 .itemInfo {
@@ -395,7 +384,7 @@ $default-padding: 8px 0;
   background-color: $color-primary-1;
   border-radius: 2px;
   overflow: hidden;
-  margin: 0 8px 0 0;
+  margin: 0px 8px 0px 0px;
 }
 
 .balanceIconContent {
@@ -433,7 +422,7 @@ $default-padding: 8px 0;
   height: 10px;
   border-radius: 50%;
   background-color: $badge-grey;
-  margin: 0 12px;
+  margin: 0px 12px;
 
   &.status-offline {
     background-color: $badge-red;

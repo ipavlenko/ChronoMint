@@ -22,7 +22,8 @@
   margin: 9px 0px 4px 0px;
 }
 
-.menu-cbe {}
+.menu-cbe {
+}
 
 .menu-user {
   display: none;
@@ -42,15 +43,36 @@
   z-index: 200;
 }
 
+:global(.root-cbe) {
+  .content {
+    width: 60px;
+  }
+
+  @include md-only {
+    .content {
+      width: 0px;
+    }
+  }
+}
+
 :global(.root-open) {
-  min-height: 100%;
-  display: flex;
-  align-items: stretch;
+  // @include position(fixed, 0, 0, 0, 0);
+
   .backdrop {
     display: block;
   }
 
   .content {
     width: 260px;
+  }
+}
+
+:global {
+  .drawer-item-active {
+    color: $color-white !important;
+    background: $color-panel-bg-1 !important;
+    .material-icons {
+      color: $color-white !important;
+    }
   }
 }
